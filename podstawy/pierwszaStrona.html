@@ -4,13 +4,36 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width,initial-scale=1.0">
             <title>Szablon</title>
+            <style>
+                *{
+                    box-sizing: border-box  ;
+                }
+                div h1 {
+                    text-align: center;
+                }
+            </style>
         </head>
         <body>
-            <h1>Pierwsza Strona JS </h1>
+            <div><h1>Pierwsza Strona JS </h1></div>
             <script>
-               
+               document.writeln("teskt w js<br>");
+               var pierwszaZmienna;
+               pierwszaZmienna = pierwszaZmienna + 1;
+               document.writeln(`${pierwszaZmienna} <br>`);
+               pierwszaZmienna = 2 + 1;
+               document.write(pierwszaZmienna);
+                pierwszaZmienna = "hello world<br>";
+                document.write(`${pierwszaZmienna} <br>`);
+                
+                var lewaZmienna = 5;
+                var prawaZmienna = "5";
 
-
+                if(lewaZmienna === prawaZmienna) {
+                    document.write("zmienne rowne <br>");
+                }
+                else {
+                    document.writeln("zmienne nie rowne <br>");
+                }
             </script>
             <p>Tekst po JSie</p>
         </body>
