@@ -14,14 +14,18 @@
         var zm1 = 5;
         let zm2 = 10;
         zm3 = 15;
-        function funkcjaPetlowa() {
-            for (i = 0; i < 10; i++) {
-                document.write(i);
-                document.write("<br>");
+        function funkcjaPetlowa(...params) { 
+            for (i = 0; i < params.length; i++) {
+                document.write(params[i]);
             }
         }
-        funkcjaPetlowa();
-    </script>
+        funkcjaPetlowa("kacper"," jest", " debilem");
+        function suma(liczba,liczba2) {
+            return liczba + liczba2;
+        }
+        let c = suma(5,9);
+        document.write(`<br> ${c}`);
+    </script>1
 
 </body>
 

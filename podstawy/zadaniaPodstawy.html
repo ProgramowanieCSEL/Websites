@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Szablon</title>
+</head>
+
+<body>
+    <script>
+        function write() {
+            for (let i = 0; i <= 10; i++) {
+                document.write(i);
+            }
+        }
+        write();
+        document.write("<br>");
+        function check(param) {
+            if (param % 2 == 0) {
+                document.write(`${param} jest parzysta`);
+            }
+            else {
+                document.write(`${param} jest nieparzysta`);
+            }
+        }
+        check(10);
+        document.write("<br>");
+        function checkParams(firstParam, secondParam) {
+            if (firstParam == secondParam) {
+                document.write(`${firstParam} jest rowny z ${secondParam}`);
+            }
+            else {
+                document.write(`${firstParam} nie jest rowny z ${secondParam}`);
+            }
+            document.write("<br>");
+            if (firstParam === secondParam) {
+                document.write(`${firstParam} jest identyczne z ${secondParam}`);
+            }
+            else {
+                document.write(`${firstParam} nie jest identyczne z ${secondParam}`);
+            }
+        }
+        checkParams(10, "10");
+        document.write("<br>");
+
+        function checkDay(param) {
+            switch (param) {
+                case 0:
+                case 7: document.write("jest niedziela <br>");
+                    break;
+                case 1: document.write("jest poniedzialek <br>");
+                    break;
+                case 2: document.write("jest wtorek <br>");
+                    break;
+                case 3: document.write("jest środa <br>");
+                    break;
+                case 4: document.write("jest czwartek <br>");
+                    break;
+                case 5: document.write("jest piatek <br>");
+                    break;
+                case 6: document.write("jest sobota <br>");
+                    break;
+                default: document.write("podales zla liczbe lub parametr");
+                    break;
+            }
+        }
+        checkDay(4);
+        document.write("<br>");
+        function writeMultiplyArray() {
+            for (let i = 0; i <= 10; i++) {
+                for (let j = 1; j <= 10; j++) {
+                    document.write(`${i} * ${j} = ${i * j} `);
+                    document.write("<br>");
+
+                }
+                document.write("<br>");
+            }
+        }
+        writeMultiplyArray();
+        
+        document.write("<br>");
+
+        function binaryConvert(param) {
+            document.write(`${param} na binarny to ${param.toString(2)}`);
+        }
+        binaryConvert(15);
+        document.write("<br>");
+    </script>
+</body>
+
+</html>
