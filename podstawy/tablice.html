@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Szablon</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        let arr = [10,15,20,25,30,70,40,45,50,55,60];
+        function maxNumber(arr) {
+            let highest = 0;
+            for (let i = 0;i<arr.length;i++) {
+                if (arr[i] > highest) {
+                    highest = arr[i];
+                }
+            }
+            document.write(highest);
+        }
+        maxNumber(arr);
+    </script>
+
+</body>
+
+</html>
