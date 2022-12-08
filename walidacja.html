@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <p>Podaj imie</p>
+    <input type="text" id="name-input" name="imię">
+    <p>Podaj wiek</p>
+    <input type="text" id="age-input" name="wiek">
+    <p>Podaj wzrost</p>
+    <input type="text" id="height-input" name="wzrost">
+    <br>
+    <br>
+    <input type="submit" value="Działaj" onclick="validate()" >
+    <div id="welcome-container">
+    </div>
+    <div id="age-container">
+
+    </div>
+    <script>
+        var increment = [0,1];
+        let status = 0;
+        let inputs = document.querySelectorAll("input");
+        let numericInputs = [inputs[1],inputs[2]];
+        let welcomeSection = document.querySelector('#welcome-container');
+        function validate() {
+            status = 0;
+            welcomeSection.innerHTML = "";
+            let range = [0,130,100,230];
+            for (let i = 0;i<inputs.length;i++) {
+                if (status < 3) {
+                    if (inputs[i].value.toString() == "") {
+                        welcomeSection.innerHTML += `Podaj ${inputs[i].name} <br>`;
+                        status++;
+                    }
+                }
+            }
+            if (status == 0) {
+                welcomeSection.innerHTML = "";
+            for (let i = 0;i<numericInputs.length;i = i + 1) {
+                if (parseInt(numericInputs[i].value) < range[i] || parseInt(numericInputs[i].value) > range[i + increment[1]]) {
+                    welcomeSection.innerHTML += numericInputs[i].name + ` Jest spoza zakresu ${range[i]} - ${range[i + increment[1]]} <br>`;
+                }
+                let isNaN = parseInt(numericInputs[i].value);
+                isNaN = isNaN.toString();
+                if (isNaN == "NaN") {
+                    welcomeSection.innerHTML += `Podano niedozwolone znaki dla ${numericInputs[i].name}<br>`;
+                }
+                else {
+                    status = 'success';
+                }
+                increment[0] = 1;
+                increment[1] = 2;
+            }
+            }
+            if (status == 'success') {
+                welcomeSection.innerHTML += `Witaj ${inputs[0].value}<br>`;
+                inputs[1].value > 18 ? welcomeSection.innerHTML += "Jestes pelnoletni <br>" : welcomeSection.innerHTML += "Jestes niepelnoletni <br>";
+                //Mozna bylo to zrobic petla,ale zabraklo czasu
+            }
+        }
+    </script>
+</body>
+
+</html>
