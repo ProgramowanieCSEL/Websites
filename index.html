@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initital-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl7.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h2>Galeria miejsc ciekawych</h2>
+    </header>
+    <main>
+        <img src="lanzarotte.jpg" alt="galeria" id="main-image" onclick="this.src='lanzarotte.jpg'">
+    </main>
+    <div id="main-container">
+        <section id="left-section">
+            <h3>Przeglądaj zdjęcia</h3>
+            <div id="images">
+                <div class="photos" onclick="change(document.querySelectorAll('.photos img')[0])">
+                    <img src="lanzarotte.jpg" alt="lanzarotte">
+                </div>
+                <div class="photos"onclick="change(document.querySelectorAll('.photos img')[1])" >
+                    <img src="pekin.jpg" alt="pekin">
+                </div>
+                <div class="photos" onclick="change(document.querySelectorAll('.photos img')[2])">
+                    <img src="serengeti.jpg" alt="serengeti">
+                </div>
+                <div class="photos" onclick="change(document.querySelectorAll('.photos img')[3])">
+                    <img src="wenecja.jpg" alt="wenecja" id="third-image">
+                </div>
+                <div class="photos" onclick="change(document.querySelectorAll('.photos img')[4])">
+                    <img src="tajlandia.jpg" alt="tajlandia">
+                </div>
+            </div>
+        </section>
+        <section id="right-section">
+            <h3>Obrazy w naszej galerii</h3>
+            <table>
+                <tr>
+                    <th>Europa</th>
+                    <th>Azja</th>
+                    <th>Afryka</th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <div id="like-container">
+                <p>Polub nas <img src="icon-off.png" onmouseover="src='icon-on.png'" onmouseout="src='icon-off.png'"></p>
+            </div>
+            <a href="https://www.pixabay.com" target="_blank">Odkryj więcej zdjęć</a>
+        </section>
+    </div>
+    <footer>
+        <p>Autor: 00000000000</p>
+    </footer>
+    <script>
+        function change(el) {
+            let items = [document.querySelectorAll('.photos img')[0],document.querySelectorAll('.photos img')[1],document.querySelectorAll('.photos img')[2],document.querySelectorAll('.photos img')[3],document.querySelectorAll('.photos img ')[4]];
+            for (let i = 0;i<5;i++) {
+                if (el == items[i]) {
+                    document.querySelector("#main-image").src = el.src;
+                }
+            }
+        }
+    </script>
+</body>
